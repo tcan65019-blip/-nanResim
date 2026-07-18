@@ -26,7 +26,7 @@ interface StoredUser {
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   // Enable large file uploads (Hızlı Resim max 20MB per file, max 10 files)
   app.use(express.json({ limit: "60mb" }));
